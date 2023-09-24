@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Stanalone.ui">
+      <class name="Stanalone.HomePageTestCases">
         <methods>
-          <include name="bn"/>
+          <include name="firstTest"/>
         </methods>
-      </class> <!-- Stanalone.ui -->
+      </class> <!-- Stanalone.HomePageTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
