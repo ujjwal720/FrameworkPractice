@@ -1,5 +1,7 @@
 package PageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -121,12 +123,37 @@ public class ResuableMethods {
 	}
 
 	public void sendKey(WebElement r, String s) {
-		
-		
+
 		r.sendKeys(s);
 
-	
-	
 	}
+
+	public List<WebElement> getallOptions(WebElement m) {
+		
+		Select a_m = new Select(m);
+
+		List<WebElement> u = a_m.getOptions();
+
+		try {
+
+	
+
+			return u;
+
+		}
+
+		catch (Exception e) {
+			
+			e.printStackTrace();
+
+		}
+		
+		return u;
+		
+
+	}
+	
+	
+	
 
 }
