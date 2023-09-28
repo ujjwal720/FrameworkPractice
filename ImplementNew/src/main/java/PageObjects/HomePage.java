@@ -3,14 +3,18 @@ package PageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+
 
 public class HomePage {
 
 	WebDriver driver;
 
-	public HomePage(WebDriver driver) {
+	public HomePage() {
 
-		this.driver = driver;
+		//this.driver = driver;
+		PageFactory.initElements(driver, this);
 
 	}
 
@@ -28,6 +32,10 @@ public class HomePage {
 
 	@FindBy(xpath = "//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li[4]")
 	WebElement Blog;
+	
+	
+	ResuableMethods p=new ResuableMethods();
+	
 
 	public void search(String s) {
 
@@ -41,22 +49,24 @@ public class HomePage {
 
 	}
 
-	public void Dress() {
+	public boolean Dress() {
 
-		Dress.click();
+		return p.isDisplayed(driver, Dress);
 
 	}
 	
 	
 	public void Tshirt() {
 
-		Tshirt.click();
+		p.ClickMethod(Tshirt);
 
 	}
 	
-	public void Blog() {
+	public boolean Blog() {
+		
+		boolean x=search.isDisplayed();
 
-		Blog.click();
+		return x;
 
 	}
 
