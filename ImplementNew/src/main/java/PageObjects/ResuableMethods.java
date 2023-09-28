@@ -2,6 +2,7 @@ package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class ResuableMethods {
@@ -90,7 +91,7 @@ public class ResuableMethods {
 			}
 
 			else {
-				
+
 				System.out.println("The following viddeo is not selected");
 
 			}
@@ -102,5 +103,30 @@ public class ResuableMethods {
 	/*
 	 * will create the exceptio next if i understna dthis
 	 */
+
+	public void mousehover(WebDriver driver, WebElement ele) {
+
+		try {
+
+			Actions op = new Actions(driver);
+
+			op.moveToElement(ele).build().perform();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		}
+
+	}
+
+	public void sendKey(WebElement r, String s) {
+		
+		
+		r.sendKeys(s);
+
+	
+	
+	}
 
 }

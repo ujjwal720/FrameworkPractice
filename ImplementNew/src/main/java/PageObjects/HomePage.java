@@ -5,15 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
-
 public class HomePage {
 
 	WebDriver driver;
 
-	public HomePage() {
+	public HomePage(WebDriver driver) {
 
-		//this.driver = driver;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 
 	}
@@ -33,9 +31,10 @@ public class HomePage {
 	@FindBy(xpath = "//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li[4]")
 	WebElement Blog;
 	
-	
-	ResuableMethods p=new ResuableMethods();
-	
+	@FindBy(xpath="//input[@id='search_query_top']")
+	WebElement search1;
+
+	ResuableMethods p = new ResuableMethods();
 
 	public void search(String s) {
 
@@ -54,21 +53,27 @@ public class HomePage {
 		return p.isDisplayed(driver, Dress);
 
 	}
-	
-	
+
 	public void Tshirt() {
 
 		p.ClickMethod(Tshirt);
 
 	}
-	
+
 	public boolean Blog() {
-		
-		boolean x=search.isDisplayed();
+
+		boolean x = search.isDisplayed();
 
 		return x;
 
 	}
 
+	public void searchData() {
+		
+		p.sendKey(search1, "Tshirts");
+		
+		
+
+	}
 
 }
