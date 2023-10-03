@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
 
 import PageObjects.LoginPage;
+import TestProperties.FailedTeseCaesListiners;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FirstTest extends TestBase{
@@ -27,6 +28,7 @@ public class FirstTest extends TestBase{
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		LoginPage a_v = new LoginPage(driver);
+		FailedTeseCaesListiners b=new FailedTeseCaesListiners(driver);
 		a_v.enterEmail();
 		a_v.enterpassword();
 		a_v.submitbutton();

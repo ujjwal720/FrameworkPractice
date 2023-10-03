@@ -30,8 +30,8 @@ public class HomePage {
 
 	@FindBy(xpath = "//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li[4]")
 	WebElement Blog;
-	
-	@FindBy(xpath="//input[@id='search_query_top']")
+
+	@FindBy(xpath = "//input[@id='search_query_top']")
 	WebElement search1;
 
 	ResuableMethods p = new ResuableMethods();
@@ -69,10 +69,16 @@ public class HomePage {
 	}
 
 	public void searchData() {
-		
+
 		p.sendKey(search1, "Tshirts");
-		
-		
+
+	}
+
+	public String gettexts() {
+
+		String s = p.gettext(Tshirt);
+
+		return s;
 
 	}
 

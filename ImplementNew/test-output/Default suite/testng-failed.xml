@@ -5,7 +5,8 @@
     <classes>
       <class name="Stanalone.HomePageTestCases">
         <methods>
-          <include name="firstTest"/>
+          <include name="secondTest"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- Stanalone.HomePageTestCases -->
     </classes>

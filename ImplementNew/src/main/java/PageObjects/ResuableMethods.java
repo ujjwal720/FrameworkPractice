@@ -129,26 +129,46 @@ public class ResuableMethods {
 	}
 
 	public List<WebElement> getallOptions(WebElement m) {
-		
+
 		Select a_m = new Select(m);
 
 		List<WebElement> u = a_m.getOptions();
 
 		try {
 
-	
-
 			return u;
 
 		}
 
 		catch (Exception e) {
-			
+
 			e.printStackTrace();
 
 		}
-		
+
 		return u;
+
+	}
+
+	public String gettext(WebElement i) {
+		
+		String j="";
+
+		try {
+
+			 j = i.getText();
+
+			return j;
+
+		}
+
+		catch (Exception e) {
+
+		}
+		
+		return j;
+		
+		
 		
 
 	}
