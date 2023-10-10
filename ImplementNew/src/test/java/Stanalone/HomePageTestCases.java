@@ -18,6 +18,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import PageObjects.HomePage;
+import DatProviders.SearchArea;
 
 @Listeners(Stanalone.FailedTeseCaesListiners.class)
 public class HomePageTestCases extends TestBase {
@@ -53,24 +54,16 @@ public class HomePageTestCases extends TestBase {
 		FailedTeseCaesListiners io = new FailedTeseCaesListiners(driver);
 	}
 
-	@Test(priority = 2)
-	public void secondTest() {
+	@Test(priority = 2,dataProviderClass=DatProviders.SearchArea.class,dataProvider="searcharea",singleThreaded=true)
+	public void secondTest(String s) {
 
 		driver.get("http://www.automationpractice.pl/index.php");
-		String s = "T-shirt";
+		String k=s;
 		HomePage rt = new HomePage(driver);
-		String io = rt.gettexts();
-		if (s.equalsIgnoreCase("T-shirts")) {
-			
-			
+		rt.searchDataExcel(s);
+		Assert.assertEquals(s, k);
 
-			Assert.assertEquals(true, true);
-
-		} else {
-			
-			Assert.assertEquals(false, true);
-
-		}
+		
 
 	}
 

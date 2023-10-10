@@ -81,5 +81,11 @@ public class HomePage {
 		return s;
 
 	}
+	
+	public void searchDataExcel(String s) {
+
+		p.sendKey(search1,s);
+
+	}
 
 }
